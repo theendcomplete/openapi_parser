@@ -52,7 +52,11 @@ module OpenAPIParser::Schemas
         if uri.absolute?
           uri
         else
-          @uri&.merge(uri)
+          if @uri.nil?
+            nil
+          else
+          @uri.merge(uri)
+          end
         end
       end
   end
