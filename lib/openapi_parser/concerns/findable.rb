@@ -46,6 +46,6 @@ module OpenAPIParser::Findable
       reference_uri = URI(reference)
       fragment = reference_uri.fragment
       reference_uri.fragment = nil
-      root.load_another_schema(reference_uri)&.find_object("##{fragment}")
+      root.load_another_schema(reference_uri).find_object("##{fragment}")
     end
 end
